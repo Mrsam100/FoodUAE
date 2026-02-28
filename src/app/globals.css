@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-background: #0A0202;
+  --color-foreground: #FFFFFF;
+
+  --color-card: #F5F5E9;
+  --color-card-foreground: #0A0202;
+
+  --color-popover: #F5F5E9;
+  --color-popover-foreground: #0A0202;
+
+  --color-primary: #D00202;
+  --color-primary-foreground: #FFFFFF;
+
+  --color-secondary: #E0F5A1;
+  --color-secondary-foreground: #0A0202;
+
+  --color-muted: #F5F5E9;
+  --color-muted-foreground: #8E8E8E;
+
+  --color-accent: #E0F5A1;
+  --color-accent-foreground: #0A0202;
+
+  --color-destructive: #D00202;
+  --color-destructive-foreground: #FFFFFF;
+
+  --color-border: rgba(10, 2, 2, 0.1);
+  --color-input: rgba(10, 2, 2, 0.1);
+  --color-ring: #D00202;
+
+  --color-chart-1: #D00202;
+  --color-chart-2: #E0F5A1;
+  --color-chart-3: #0A0202;
+  --color-chart-4: #8E8E8E;
+  --color-chart-5: #F5F5E9;
+
+  --color-sidebar: #0A0202;
+  --color-sidebar-foreground: #FFFFFF;
+  --color-sidebar-primary: #D00202;
+  --color-sidebar-primary-foreground: #FFFFFF;
+  --color-sidebar-accent: #1A0505;
+  --color-sidebar-accent-foreground: #FFFFFF;
+  --color-sidebar-border: rgba(255, 255, 255, 0.1);
+  --color-sidebar-ring: #D00202;
+
+  /* Brand Specific Tokens */
+  --color-bg-dark: #0A0202;
+  --color-bg-light: #F5F5E9;
+  --color-accent-red: #D00202;
+  --color-accent-lime: #E0F5A1;
+  --color-text-muted: #8E8E8E;
+
+  --font-display: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --radius-lg: 32px;
+  --radius-md: 16px;
+  --radius-sm: 8px;
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-pulse-slow: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  @keyframes accordion-down {
+    from { height: 0; }
+    to { height: var(--radix-accordion-content-height); }
+  }
+  @keyframes accordion-up {
+    from { height: var(--radix-accordion-content-height); }
+    to { height: 0; }
+  }
+  @keyframes pulse-slow {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+  }
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-border);
+  }
+
+  :root {
+    --background: #0A0202;
+    --foreground: #FFFFFF;
+    --card: #F5F5E9;
+    --card-foreground: #0A0202;
+    --popover: #F5F5E9;
+    --popover-foreground: #0A0202;
+    --primary: #D00202;
+    --primary-foreground: #FFFFFF;
+    --secondary: #E0F5A1;
+    --secondary-foreground: #0A0202;
+    --muted: #F5F5E9;
+    --muted-foreground: #8E8E8E;
+    --accent: #E0F5A1;
+    --accent-foreground: #0A0202;
+    --destructive: #D00202;
+    --destructive-foreground: #FFFFFF;
+    --border: rgba(10, 2, 2, 0.1);
+    --input: rgba(10, 2, 2, 0.1);
+    --ring: #D00202;
+    --radius: 2rem;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  body {
+    background-color: var(--color-bg-dark);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+  }
+
+  /* Typography Foundations */
+  h1, .text-display {
+    font-family: var(--font-display);
+    font-size: clamp(40px, 10vw, 180px);
+    font-weight: 800;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    text-transform: none;
+  }
+
+  h2, .text-section-title {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 6vw, 80px);
+    font-weight: 700;
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+  }
+
+  .text-stats-large {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 5vw, 64px);
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  .text-body-editorial {
+    font-size: clamp(16px, 2vw, 24px);
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  @media (max-width: 640px) {
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+
+  /* Layout & Utility Classes */
+  .section-spacing {
+    padding-top: 160px;
+    padding-bottom: 160px;
+  }
+
+  @media (max-width: 768px) {
+    .section-spacing {
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+  }
+
+  .theme-transition-light {
+    background-color: var(--color-bg-light);
+    color: var(--color-bg-dark);
+  }
+
+  .theme-transition-light * {
+    border-color: rgba(10, 2, 2, 0.1);
+  }
+
+  .glass-nav {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 9999px;
+  }
+
+  .data-bar {
+    background-color: var(--color-accent-red);
+    width: 100%;
+    transition: height 1s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+  }
+
+  .data-bar::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(208, 2, 2, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cta-pulse {
+    animation: var(--animate-pulse-slow);
+    background-color: var(--color-accent-lime);
+    color: var(--color-bg-dark);
+    font-weight: 600;
+    padding: 1rem 2.5rem;
+    border-radius: 9999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+    min-height: 48px;
+  }
+
+  .cta-pulse:hover {
+    transform: scale(1.05);
+  }
+
+  .scrolly-text {
+    color: var(--color-text-muted);
+    transition: color 0.5s ease;
+  }
+
+  .scrolly-text.active {
+    color: var(--color-foreground);
+  }
+
+  .ai-input-wrapper {
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: 9999px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    padding: 0 8px 0 24px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  }
+
+  .faq-divider {
+    border-top: 1px solid rgba(10, 2, 2, 0.1);
+  }
+
+  .video-container {
+    border-radius: 32px;
+    overflow: hidden;
+    mask-image: radial-gradient(white, black); /* Fix for Safari rounded corners */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
