@@ -50,7 +50,7 @@ export default function DubaiCulture() {
   return (
     <section ref={containerRef} className="relative bg-[#0D0D0D] py-16 md:py-24 lg:py-40 overflow-hidden border-y border-white/5">
       <div className="container mx-auto px-8 relative z-10">
-        <div className="flex flex-col lg:flex-row gap-20 items-center mb-32">
+        <div className="flex flex-col lg:flex-row gap-10 md:gap-20 items-center mb-16 md:mb-32">
           <div className="lg:w-1/2">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -83,7 +83,7 @@ export default function DubaiCulture() {
                  rotate: useTransform(smoothProgress, [0, 1], [0, 45]),
                  scale: useTransform(smoothProgress, [0, 1], [0.9, 1.1])
                }}
-               className="relative aspect-square w-full max-w-[500px] mx-auto overflow-hidden rounded-[80px] border-2 border-[#E0F5A1]/20 shadow-[0_0_100px_rgba(224,245,161,0.1)]"
+               className="relative aspect-square w-full max-w-[500px] mx-auto overflow-hidden rounded-[40px] md:rounded-[60px] lg:rounded-[80px] border-2 border-[#E0F5A1]/20 shadow-[0_0_100px_rgba(224,245,161,0.1)]"
              >
                <Image 
                  src={FOOD_ASSETS.foodSpread} 
@@ -135,10 +135,10 @@ export default function DubaiCulture() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: card.delay }}
-              className="p-10 rounded-[48px] bg-white/[0.03] border border-white/5 hover:bg-white/[0.08] hover:border-[#E0F5A1]/30 transition-all group"
+              className="p-5 md:p-8 lg:p-10 rounded-[24px] md:rounded-[36px] lg:rounded-[48px] bg-white/[0.03] border border-white/5 hover:bg-white/[0.08] hover:border-[#E0F5A1]/30 transition-all group"
             >
               <div className="text-4xl mb-6 group-hover:scale-125 transition-transform duration-500 origin-left">{card.icon}</div>
-              <h3 className="text-[24px] font-bold text-white mb-4 leading-tight">{card.title}</h3>
+              <h3 className="text-[20px] md:text-[24px] font-bold text-white mb-3 md:mb-4 leading-tight">{card.title}</h3>
               <p className="text-[#8E8E8E] text-[16px] leading-relaxed font-medium">
                 {card.desc}
               </p>

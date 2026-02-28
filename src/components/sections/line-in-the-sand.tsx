@@ -64,7 +64,7 @@ export default function LineInTheSand() {
           
           {/* Main Scrubber Text (Center-Left Focus) */}
           <div className="lg:col-span-8 z-10 pointer-events-auto">
-            <h2 className="text-[40px] md:text-[64px] font-extrabold leading-[1.1] tracking-tighter mb-12">
+            <h2 className="text-[28px] md:text-[48px] lg:text-[64px] font-extrabold leading-[1.1] tracking-tighter mb-6 md:mb-12">
               {words.map((word, i) => {
                 // Calculation for per-word highlighting
                 // We want the text to fill up as we scroll
@@ -148,7 +148,7 @@ export default function LineInTheSand() {
           className="max-w-4xl transition-all duration-1000"
           style={{ opacity: Math.max(0, (scrollProgress - 0.85) * 6.6) }}
         >
-          <h3 className="text-[64px] md:text-[96px] font-extrabold leading-[0.9] tracking-tighter text-[#E7FFAC]">
+          <h3 className="text-[36px] md:text-[64px] lg:text-[96px] font-extrabold leading-[0.9] tracking-tighter text-[#E7FFAC]">
             Real Food <br />
             can solve <br />
             this crisis.

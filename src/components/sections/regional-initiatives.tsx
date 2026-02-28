@@ -31,11 +31,11 @@ const RegionalInitiatives = () => {
   ];
 
   return (
-    <section className="bg-[#0A0505] py-[160px] relative overflow-hidden">
+    <section className="bg-[#0A0505] py-16 md:py-32 lg:py-[160px] relative overflow-hidden">
       <div className="container mx-auto px-6 max-w-[1280px]">
         {/* Header Section */}
-        <div className="text-center mb-24">
-          <h2 className="text-white font-display text-[40px] md:text-[64px] font-bold leading-[1.1] tracking-[-0.03em] mb-6">
+        <div className="text-center mb-12 md:mb-24">
+          <h2 className="text-white font-display text-[28px] md:text-[48px] lg:text-[64px] font-bold leading-[1.1] tracking-[-0.03em] mb-4 md:mb-6">
             UAE Leading the <br />Way to Real Food
           </h2>
           <p className="text-[#918F84] font-body text-[20px] md:text-[24px] max-w-[800px] mx-auto leading-[1.4]">
@@ -44,12 +44,12 @@ const RegionalInitiatives = () => {
         </div>
 
         {/* Initiatives List Card */}
-        <div className="bg-[#F5F4E4] rounded-[24px] p-8 md:p-12 shadow-2xl max-w-[900px] mx-auto overflow-hidden">
+        <div className="bg-[#F5F4E4] rounded-[24px] p-4 md:p-8 lg:p-12 shadow-2xl max-w-[900px] mx-auto overflow-hidden">
           <div className="space-y-0">
             {initiatives.map((item, index) => (
-              <div 
-                key={index} 
-                className={`group py-10 ${index !== initiatives.length - 1 ? 'border-b border-black/10' : ''} transition-all duration-300 hover:bg-black/[0.02] -mx-8 md:-mx-12 px-8 md:px-12`}
+              <div
+                key={index}
+                className={`group py-6 md:py-10 ${index !== initiatives.length - 1 ? 'border-b border-black/10' : ''} transition-all duration-300 hover:bg-black/[0.02] -mx-4 md:-mx-8 lg:-mx-12 px-4 md:px-8 lg:px-12`}
               >
                 <h3 className="text-[#0A0505] font-display text-[20px] md:text-[24px] font-bold mb-3 tracking-tight">
                   {item.title}

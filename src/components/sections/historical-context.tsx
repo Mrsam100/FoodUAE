@@ -25,7 +25,7 @@ export default function HistoricalContext() {
       setScrollProgress(progress);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -40,12 +40,11 @@ export default function HistoricalContext() {
     <section 
       ref={sectionRef}
       id="problem-narrative" 
-      className="relative w-full bg-[#0A0504] text-white overflow-hidden"
-      style={{ minHeight: '300vh' }}
+      className="relative w-full bg-[#0A0504] text-white overflow-hidden min-h-[200vh] md:min-h-[300vh]"
     >
       {/* Sticky Content Container */}
       <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
-        <div className="container mx-auto px-8 md:px-16 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        <div className="container mx-auto px-4 md:px-8 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-20 items-center">
           
           {/* Left Side: Large Reveal Text */}
           <div className="relative z-10">
@@ -76,16 +75,16 @@ export default function HistoricalContext() {
           </div>
 
           {/* Right Side: Sticky Image Comparison */}
-          <div className="relative flex justify-center items-center">
+          <div className="relative flex justify-center items-center hidden lg:flex">
             {/* 3D Floating Food Elements */}
-            <div 
-              className="absolute -top-20 -left-20 w-32 h-32 z-20 transition-transform duration-500 pointer-events-none"
+            <div
+              className="absolute -top-20 -left-20 w-32 h-32 z-20 transition-transform duration-500 pointer-events-none hidden md:block"
               style={{ transform: `translateY(${scrollProgress * -100}px) rotate(${scrollProgress * 45}deg) rotateX(${scrollProgress * 30}deg)` }}
             >
               <Image src={FOOD_ASSETS.tomatoes} alt="Tomato" width={128} height={128} className="object-contain" />
             </div>
-            <div 
-              className="absolute -bottom-20 -right-20 w-40 h-40 z-20 transition-transform duration-700 pointer-events-none"
+            <div
+              className="absolute -bottom-20 -right-20 w-40 h-40 z-20 transition-transform duration-700 pointer-events-none hidden md:block"
               style={{ transform: `translateY(${scrollProgress * 150}px) rotate(${scrollProgress * -60}deg) rotateY(${scrollProgress * 45}deg)` }}
             >
               <Image src={FOOD_ASSETS.broccoli} alt="Broccoli" width={160} height={160} className="object-contain" />
@@ -144,7 +143,7 @@ export default function HistoricalContext() {
       <div className="h-screen w-full flex items-center justify-center">
         <div className="container px-8 flex flex-col items-center">
           <h2 
-            className="text-[48px] md:text-[80px] lg:text-[100px] font-extrabold text-center leading-none tracking-tighter"
+            className="text-[32px] md:text-[80px] lg:text-[100px] font-extrabold text-center leading-none tracking-tighter"
             style={{ 
               opacity: Math.max(0, (scrollProgress - 0.85) * 6.6),
               transform: `translateY(${(1 - scrollProgress) * 100}px)`

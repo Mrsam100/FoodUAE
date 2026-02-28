@@ -27,9 +27,9 @@ export default function DisintegratingText() {
     <section
       ref={containerRef}
       id="solution-solvable"
-      className="relative flex min-h-[60vh] w-full flex-col items-center justify-center bg-[#0A0505] py-[160px]"
+      className="relative flex min-h-[60vh] w-full flex-col items-center justify-center bg-[#0A0505] py-16 md:py-32 lg:py-[160px]"
     >
-      <div className="container mx-auto px-10">
+      <div className="container mx-auto px-4 md:px-10">
         <h2 className="flex flex-col items-center text-center">
           {/* First Line */}
           <div className="mb-4 flex flex-wrap justify-center gap-x-[0.3em] overflow-hidden leading-[1.1]">
@@ -88,13 +88,13 @@ export default function DisintegratingText() {
       </div>
 
       {/* Narrative Subtext Following the Disintegrating Title */}
-      <div className="container mx-auto mt-24 px-10">
+      <div className="container mx-auto mt-12 md:mt-24 px-4 md:px-10">
         <motion.p
           initial={{ opacity: 0.1 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.8 }}
           viewport={{ once: true }}
-          className="mx-auto max-w-[900px] text-center text-[24px] font-normal leading-[1.4] text-[#8E8A85] md:text-[32px]"
+          className="mx-auto max-w-[900px] text-center text-[18px] font-normal leading-[1.4] text-[#8E8A85] md:text-[24px] lg:text-[32px]"
         >
           For the first time, we{"'"}re calling out the dangers of highly
           processed foods and rebuilding a broken system from the ground up with

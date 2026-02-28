@@ -32,15 +32,15 @@ const StatsSection: React.FC = () => {
   return (
     <section 
       id="problem" 
-      className="bg-[#0B0504] text-white py-[160px] px-6 md:px-12 flex flex-col items-center"
+      className="bg-[#0B0504] text-white py-16 md:py-32 lg:py-[160px] px-6 md:px-12 flex flex-col items-center"
       aria-label="The Health Crisis - Stats"
     >
       {/* Section Header */}
-      <div className="max-w-[1280px] w-full text-center mb-24">
-        <h2 className="text-[#888888] font-mono text-[10px] uppercase tracking-[0.2em] mb-8">
+      <div className="max-w-[1280px] w-full text-center mb-12 md:mb-24">
+        <h2 className="text-[#888888] font-mono text-[10px] uppercase tracking-[0.2em] mb-4 md:mb-8">
           The State of Our Health
         </h2>
-        <h3 className="text-[clamp(48px,8vw,100px)] font-[800] leading-[0.95] tracking-[-0.04em] mb-4">
+        <h3 className="text-[clamp(32px,8vw,100px)] font-[800] leading-[0.95] tracking-[-0.04em] mb-4">
           The UAE is sick.<br />
           The data is clear.
         </h3>
@@ -82,7 +82,7 @@ const StatsSection: React.FC = () => {
       </div>
 
       {/* Support text below stats */}
-      <div className="max-w-[800px] w-full mt-32 text-center">
+      <div className="max-w-[800px] w-full mt-16 md:mt-32 text-center">
         <p className="text-[#888888] text-[clamp(18px,1.5vw,22px)] leading-relaxed font-normal">
           For decades regional health has been impacted by global food systems that prioritized 
           convenience and shelf-life over human biology. We are now facing rates of 

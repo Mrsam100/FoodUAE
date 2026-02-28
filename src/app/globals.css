@@ -268,6 +268,20 @@
     box-shadow: 0 4px 20px rgba(0,0,0,0.05);
   }
 
+  @media (max-width: 640px) {
+    .ai-input-wrapper {
+      height: 56px;
+      padding: 0 6px 0 16px;
+    }
+  }
+
+  /* Mobile performance: promote animated layers to GPU */
+  @media (max-width: 768px) {
+    .video-container {
+      border-radius: 24px;
+    }
+  }
+
   .faq-divider {
     border-top: 1px solid rgba(10, 2, 2, 0.1);
   }

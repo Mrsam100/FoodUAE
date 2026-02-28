@@ -110,7 +110,7 @@ const CrisisSolution = () => {
         aria-label="Initiative description"
       >
         <div className="max-w-[1280px] w-full">
-          <p className="flex flex-wrap font-normal leading-[1.4] text-[24px] sm:text-[40px] lg:text-[64px] tracking-tight text-left">
+          <p className="flex flex-wrap font-normal leading-[1.4] text-[20px] sm:text-[32px] lg:text-[52px] tracking-tight text-left">
             {words.map((word, i) => (
               <RevealWord
                 key={i}
