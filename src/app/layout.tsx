@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import VisualEditsMessenger from "../visual-edits/VisualEditsMessenger";
 import ErrorReporter from "@/components/ErrorReporter";
 import { LanguageProvider } from "@/lib/language-context";
 
@@ -42,14 +41,6 @@ export const metadata: Metadata = {
     images: ["/images/3d-food/food-spread.png"],
   },
   manifest: "/manifest.json",
-  icons: {
-    icon: [
-      { url: "/favicon.ico", sizes: "any" },
-    ],
-    apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180" },
-    ],
-  },
 };
 
 export default function RootLayout({
