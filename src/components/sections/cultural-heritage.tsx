@@ -83,7 +83,7 @@ export default function CulturalHeritage() {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: idx * 0.1 }}
-              className={`relative flex flex-col p-4 md:p-8 lg:p-12 rounded-[40px] bg-[#111] border border-white/5 group hover:border-[#E0F5A1]/20 transition-all overflow-hidden ${idx % 2 !== 0 ? 'md:mt-24' : ''}`}
+              className="relative flex flex-col p-4 md:p-8 lg:p-12 rounded-[40px] bg-[#111] border border-white/5 group hover:border-[#E0F5A1]/20 transition-all overflow-hidden"
             >
               <div 
                 className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"

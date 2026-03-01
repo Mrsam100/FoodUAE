@@ -65,7 +65,7 @@ export default function ProblemSolutionSection() {
                 style={{ opacity: pyramidOpacity, scale: pyramidScale }}
                 className="relative group"
               >
-                <div className="relative w-[240px] sm:w-[320px] lg:w-[440px] aspect-[440/340] rounded-[40px] overflow-hidden border border-white/10 shadow-[0_40px_100px_rgba(208,2,2,0.15)] group-hover:shadow-[0_40px_100px_rgba(208,2,2,0.3)] transition-all duration-700">
+                <div className="relative w-[240px] sm:w-[280px] lg:w-[320px] aspect-[440/340] rounded-[40px] overflow-hidden border border-white/10 shadow-[0_40px_100px_rgba(208,2,2,0.15)] group-hover:shadow-[0_40px_100px_rgba(208,2,2,0.3)] transition-all duration-700">
                   <Image
                     src={pyramidImage}
                     alt="1992 Food Pyramid"
@@ -142,7 +142,7 @@ function DisintegratingText({ progress, text }: { progress: any, text: string })
       className="text-[clamp(48px,10vw,140px)] font-black leading-[0.85] tracking-tighter uppercase"
     >
       {words.map((word, wordIdx) => (
-        <span key={wordIdx} className="inline-block whitespace-nowrap mr-[0.3em] overflow-hidden">
+        <span key={wordIdx} className="inline-block whitespace-nowrap mr-[0.3em]">
           {word.split("").map((char, charIdx) => (
             <motion.span
               key={charIdx}
